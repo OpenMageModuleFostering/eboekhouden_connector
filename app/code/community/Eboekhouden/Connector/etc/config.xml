@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * NOTICE OF LICENSE
+ *
+ * The MIT License
+ *
+ * Copyright (c) 2010 e-Boekhouden.nl
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ *
+ * @package    Eboekhouden_Connector
+ * @copyright  Copyright (c) 2010 e-Boekhouden.nl
+ * @license    http://opensource.org/licenses/mit-license.php  The MIT License
+ */
+  -->
+<config>
+  <modules>
+    <Eboekhouden_Connector>
+      <version>1.0.0</version>
+    </Eboekhouden_Connector>
+  </modules>
+
+  <global>
+
+    <models>
+      <eboekhouden>
+        <class>Eboekhouden_Connector_Model</class>
+      </eboekhouden>
+    </models>
+
+    <helpers>
+      <eboekhouden>
+        <class>Eboekhouden_Connector_Helper</class>
+      </eboekhouden>
+    </helpers>
+
+    <blocks>
+      <eboekhouden>
+        <class>Eboekhouden_Connector_Block</class>
+      </eboekhouden>    
+      <adminhtml>
+        <rewrite>
+          <sales_order_grid>Eboekhouden_Connector_Block_Sales_Order_Grid</sales_order_grid>
+          <sales_invoice_grid>Eboekhouden_Connector_Block_Sales_Invoice_Grid</sales_invoice_grid>
+          <catalog_product_edit_tabs>Eboekhouden_Connector_Block_Catalog_Product_Edit_Tabs</catalog_product_edit_tabs>
+          <catalog_product_edit_action_attribute_tabs>Eboekhouden_Connector_Block_Catalog_Product_Edit_Action_Attribute_Tabs</catalog_product_edit_action_attribute_tabs>
+          <system_config_form_field>Eboekhouden_Connector_Block_System_Config_Form_Field</system_config_form_field>
+        </rewrite>
+      </adminhtml>
+    </blocks>
+
+    <resources>
+      <eboekhouden_setup>
+        <setup>
+          <module>Eboekhouden_Connector</module>
+          <class>Eboekhouden_Connector_Model_Resource_Eav_Mysql4_Setup</class>
+        </setup>
+  
+        <connection>
+          <use>core_setup</use>
+        </connection>
+      </eboekhouden_setup>
+  
+      <eboekhouden_write>
+        <connection>
+          <use>core_write</use>
+        </connection>
+      </eboekhouden_write>
+      <eboekhouden_read>
+        <connection>
+          <use>core_read</use>
+        </connection>
+      </eboekhouden_read>
+    </resources>
+
+  </global>
+
+  <admin>
+    <routers>
+      <Eboekhouden_Connector>
+        <use>admin</use>
+        <args>
+          <module>Eboekhouden_Connector</module>
+          <frontName>eboekhouden</frontName>
+        </args>
+      </Eboekhouden_Connector>
+    </routers>
+  </admin>
+
+  <adminhtml>
+    <translate>
+      <modules>
+        <Eboekhouden_Connector>
+          <files>
+            <default>Eboekhouden_Connector.csv</default>
+          </files>
+        </Eboekhouden_Connector>
+      </modules>
+    </translate>
+    <acl>
+      <resources>
+        <admin>
+          <children>
+            <system>
+              <children>
+                <config>
+                  <children>
+                    <eboekhouden translate="title" module="eboekhouden">
+                      <title>e-Boekhouden.nl Instellingen</title>
+                    </eboekhouden>
+                  </children>
+                </config>
+              </children>
+            </system>
+          </children>
+        </admin>
+      </resources>
+    </acl>
+  </adminhtml>
+
+</config>

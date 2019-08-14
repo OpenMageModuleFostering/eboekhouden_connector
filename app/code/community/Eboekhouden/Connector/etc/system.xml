@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * NOTICE OF LICENSE
+ *
+ * The MIT License
+ *
+ * Copyright (c) 2010 e-Boekhouden.nl
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ *
+ * @package    Eboekhouden_Connector
+ * @copyright  Copyright (c) 2010 e-Boekhouden.nl
+ * @license    http://opensource.org/licenses/mit-license.php  The MIT License
+ */
+  -->
+<config>
+  <sections>
+    <eboekhouden module="eboekhouden">
+      <label>e-Boekhouden.nl</label>
+      <tab>sales</tab>
+      <frontend_type>text</frontend_type>
+      <sort_order>995</sort_order>
+      <show_in_default>1</show_in_default>
+      <show_in_website>0</show_in_website>
+      <show_in_store>0</show_in_store>
+      <groups>
+        <connector translate="label,comment" module="eboekhouden">
+          <label>Connector logingegevens</label>
+          <comment><![CDATA[U vindt deze gegevens in e-Boekhouden.nl onder Beheer &gt; Instellingen &gt; Magento<br />&nbsp;]]></comment>             
+          <sort_order>100</sort_order>
+          <show_in_default>1</show_in_default>
+          <show_in_website>0</show_in_website>
+          <show_in_store>0</show_in_store>
+          <fields>
+            <username translate="label">
+              <sort_order>110</sort_order>
+              <label>Gebruikersnaam</label>
+              <frontend_type>text</frontend_type>
+              <show_in_default>1</show_in_default>
+              <show_in_website>0</show_in_website>
+              <show_in_store>0</show_in_store>
+            </username>
+            <securitycode1 translate="label">
+              <sort_order>120</sort_order>
+              <label>Beveiligingscode 1</label>
+              <frontend_type>text</frontend_type>
+              <show_in_default>1</show_in_default>
+              <show_in_website>0</show_in_website>
+              <show_in_store>0</show_in_store>
+            </securitycode1>
+            <securitycode2 translate="label">
+              <sort_order>130</sort_order>
+              <label>Beveiligingscode 2</label>
+              <frontend_type>text</frontend_type>
+              <show_in_default>1</show_in_default>
+              <show_in_website>0</show_in_website>
+              <show_in_store>0</show_in_store>
+            </securitycode2>
+          </fields>
+        </connector>
+        <settings translate="label" module="eboekhouden">
+          <label>Instellingen</label>
+          <sort_order>200</sort_order>
+          <show_in_default>1</show_in_default>
+          <show_in_website>0</show_in_website>
+          <show_in_store>0</show_in_store>
+          <fields>
+            <useasinvoicenr translate="label,comment">
+              <sort_order>210</sort_order>
+              <label>Factuur nr voor e-Boekhouden.nl</label>
+              <frontend_type>select</frontend_type>
+              <comment><![CDATA[Dit geldt alleen bij de export van facturen.]]></comment>             
+              <source_model>eboekhouden/config_useasinvoicenr</source_model>
+              <show_in_default>1</show_in_default>
+              <show_in_website>0</show_in_website>
+              <show_in_store>0</show_in_store>
+            </useasinvoicenr>
+          </fields>        
+        </settings>
+        <vatcodes translate="label,comment" module="eboekhouden">
+          <sort_order>300</sort_order>
+          <label>BTW-codes</label>
+          <comment><![CDATA[Hier kunt u BTW-codes van Magento aan BTW-codes van e-Boekhouden.nl verbinden.<BR />&nbsp;]]></comment>             
+          <show_in_default>1</show_in_default>
+          <show_in_website>0</show_in_website>
+          <show_in_store>0</show_in_store>
+          <fields>
+            <vatcode_HOOG_VERK translate="label">
+              <sort_order>311</sort_order>
+              <label>BTW Hoog 19%</label>
+              <frontend_type>text</frontend_type>
+              <show_in_default>1</show_in_default>
+              <show_in_website>0</show_in_website>
+              <show_in_store>0</show_in_store>
+            </vatcode_HOOG_VERK>
+            <vatcode_LAAG_VERK translate="label">
+              <sort_order>312</sort_order>
+              <label>BTW Laag 6%</label>
+              <frontend_type>text</frontend_type>
+              <show_in_default>1</show_in_default>
+              <show_in_website>0</show_in_website>
+              <show_in_store>0</show_in_store>
+            </vatcode_LAAG_VERK>         
+            <vatcode_GEEN translate="label">
+              <sort_order>318</sort_order>
+              <label>Geen BTW van toepassing</label>
+              <frontend_type>text</frontend_type>
+              <show_in_default>1</show_in_default>
+              <show_in_website>0</show_in_website>
+              <show_in_store>0</show_in_store>
+            </vatcode_GEEN>            
+          </fields>
+        </vatcodes>
+      </groups>
+    </eboekhouden>
+  </sections>
+</config>
