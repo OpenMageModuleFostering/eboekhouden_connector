@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/Eboekhouden_Connector",
+    "name": "OpenMageModuleFostering\/Eboekhouden_Connector",
     "type": "magento-module",
     "license": "MIT",
     "homepage": "",
     "description": "e-Boekhouden.nl Connector",
     "authors": [
-    {
-        "name": "Jeroen Vermeulen",
-        "email": "info@jeroenvermeulen.eu"
-    }
-],
+        {
+            "name": "Jeroen Vermeulen",
+            "email": "info@jeroenvermeulen.eu"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
