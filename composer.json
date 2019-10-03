@@ -1,5 +1,5 @@
 {
-    "name": "OpenMageModuleFostering\/Eboekhouden_Connector",
+    "name": "openmage-module-fostering\/eboekhouden_connector",
     "type": "magento-module",
     "license": "MIT",
     "homepage": "",
